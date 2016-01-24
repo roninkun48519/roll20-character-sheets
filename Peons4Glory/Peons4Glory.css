@@ -1,0 +1,68 @@
+
+}
+
+.sheet-p4gBasicInfo{
+    border: thin solid black;
+    margin: 10px;
+    padding: 1px;
+}
+
+
+.sheet-battleInfo{
+    padding: 5px;
+}
+.sheet-p4gCharacterSex{
+    width: 52px;
+}
+
+
+
+.sheet-p4gCharacterAlighnmentop{
+    width: 140px;
+}
+
+.sheet-combatDamage{
+     border: thin solid black;
+    margin: 1%;
+}
+
+.sheet-brawnFieldSet{
+    border: thick solid yellow;
+    position: static;
+    float: left;
+    margin: 1%;
+    width 25%;
+}
+
+.sheet-finesseFieldSet{
+    border: thick solid black;
+    position: static;
+    float: left;
+    margin: 1%;
+    width 25%;
+}
+.sheet-spiritFieldSet{
+    border: thick solid green;
+    position: static;
+    float: left;
+    margin: 1%;
+    width 25%;
+}
+.sheet-mindFieldSet{
+    border: thick solid red;
+    position: static;
+    float: left;
+    margin: 1%;
+    width 25%;
+}
+
+
+.sheet-listofSkills{
+    position: static;
+    float: left;
+    
+}
+}
+
+.sheet-optionalInfoArea{
+}

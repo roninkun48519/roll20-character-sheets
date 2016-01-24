@@ -1,0 +1,212 @@
+<div class="sheet-p4fSheetBody">
+
+<!-- --------------------------Basic Info--------------------------------------------------- -->
+<div class='sheet-p4gBasicInfo'>
+        
+            <label> Name: <input type="text" class="sheet-p4gCharacterName" name="attr_name"></label>
+            <label> Race: <input type="text" class="sheet-p4gCharacterRace" name="attr_race"></label>
+            <label> Job: <input type="text" class="sheet-p4gCharacterJob" name="attr_job"></label>
+            
+            <table>
+            <tr>
+                <td>Alignment:</td>
+                <td>Sex:</td>
+                <td>Age:</td>
+            </tr>
+            <tr>
+             <td> <label> <input type="text" class="sheet-p4gCharacterAlighnmentop" name="attr_align"></label></td>
+           <!--  <td><label> </label><select name="attr_align" class="sheet-p4gCharacterAlighnmentop" width: 100px>                
+          <option value="lawful good">lawful good</option>
+          <option value="neutral good">neutral good</option>
+          <option value="chaotic good">chaotic good</option>
+          <option value="lawful neutral">lawful neutral</option>
+          <option value="true neutral">true neutral</option>
+          <option value="chaotic neutral">chao neutral</option>
+          <option value="lawful evil">lawful evil</option>
+          <option value="neutral evil">neutral evil</option>
+          <option value="chaotic evil">chaotic evil</option>    
+      </select></label></td>-->
+      
+            <td><label><input type="text"  class="sheet-p4gCharacterSex" name="attr_sex"></label></td>
+            <td><label><input type="number" class="sheet-p4gCharacterAge" name="attr_age"></label></td>
+            
+            </tr>    
+            </table>
+            
+            
+            <div name="sheet-optionalInfoArea">
+                <table name= "sheet-optionalInfo">
+                    <div name="sheet-optionalInfoArea">
+                        <tr>
+                            <td>Bio: <textarea class="p4gCharacterBio" name="attr_bio" style="height: 50%"></textarea> </td>
+                            <td>Notes: <textarea class="p4gCharacterNotes" name="attr_notes" style="height: 50%"></textarea> </td>
+                        </tr>
+                    </div>
+                </table>
+            </div>
+            
+</div>
+
+<!-- -----------------------------------------Battle Info ----------------------------------- -->
+<div class="sheet-battleInfo">
+            AC: <input type="number" name= "attr_ac">
+            Soak: <input type="number" name= "attr_soak">
+            Current HP: <input type="number" name= "attr_hp">
+            Max HP: <input type="number" name= "attr_hp_max">                             
+</div>
+
+<table class="sheet-TeaNPips">
+<tr >
+    <td >
+<div class="sheet-targetNumberbox">
+    Target Number (TN): <input type="number" name= "attr_targetNum" value="5"/>
+</div>
+    </td>
+    <td>
+<div class="sheet-actionpointBoxbox">
+    Action Points (PiPs): <input type="number" name= "attr_pip" value="3"/> 
+</div>
+    </td>
+</tr>
+</table>
+
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+<!-- -----------------------------------------------------Basic Combat----------------------------------------------------- -->
+    <div class="sheet-combatDamage">
+                <b>Basic Attack______    </b>
+    			<input type="number" name="attr_currentDamageDice" value="1"/> 
+				d <select name="attr_currentDamageDieType" class="sheet-dieTypeSelect" style="width: 50px;" value="8">
+				  <option value="6">6</option>
+				  <option value="8">8</option>
+				</select>
+				
+				+
+                <input type="number" name="attr_currentDamageModifier" value="0"/>
+				
+				<button type='roll' value='/roll @{currentDamageDice}d@{currentDamageDieType} + @{currentDamageModifier} for damage'> Damage</button>
+	</div>
+    <!--       ------------------------------------------------------------------------------------------------                         -->
+
+<!-- ======================================skill info 2.0----------------------------------- -->
+<div class= "sheet-skillInfoAll">
+
+<div name="skillFieldSet" class="sheet-brawnFieldSet" style= "width: 20%;">
+    <div name="brawnSkillSet" class="sheet-brawnSkillSet">
+        <button type='roll' value= '/roll @{brawn}d10>@{targetNum}' >Brawn</button>
+            <input type="number" name= "attr_brawn">
+    </div>
+    <fieldset class="repeating_BrawnFieldSet">
+        <input type="text" name="attr_brawnSkillName" style= "width: 30%;"> 
+        <input type="number" name= "attr_brawnSkill0">
+        <button type='roll' value= '/roll (@{brawnSkill0}+@{brawn})d10>@{targetNum}'></button>
+    </fieldset>
+</div>
+
+<div name="skillFieldSet" class="sheet-finesseFieldSet"style= "width: 20%;">
+    <div name="finesseSkillSet" class="sheet-finesseSkillSet">
+        <button type='roll' value= '/roll @{finesse}d10>@{targetNum}' >Finesse</button>
+        <input type="number" name= "attr_finesse">
+    </div>
+    <fieldset class="repeating_finesseFieldSet">
+        <input type="text" name="attr_finesseSkillName" style= "width: 30%;">
+        <input type="number" name= "attr_finesseSkill0">
+        <button type='roll' value= '/roll (@{finesseSkill0}+@{finesse})d10>@{targetNum}'></button>
+    </fieldset>
+</div>
+
+<div name="skillFieldSet" class="sheet-spiritFieldSet"  style= "width: 20%;">
+    <div name="spiritSkillSet" class="sheet-spiritSkillSet">
+        <button type='roll' value= '/roll @{spirit}d10>@{targetNum}' >Spirit</button>
+        <input type="number" name= "attr_spirit">
+    </div>
+    <fieldset class="repeating_spiritFieldSet">
+        <input type="text" name="attr_spiritSkillName" style= "width: 45%;"> 
+        <input type="number" name= "attr_spiritSkill0">
+        <button type='roll' value= '/roll (@{spiritSkill0}+@{spirit})d10>@{targetNum}'></button>
+    </fieldset>
+</div>
+
+<div name="skillFieldSet" class="sheet-mindFieldSet" style= "width: 20%;">
+    <div name="mindSkillSet" class="sheet-mindSkillSet">
+        <button type='roll' value= '/roll @{mind}d10>@{targetNum}' >Mind</button>
+        <input type="number" name= "attr_mind">
+    </div>
+    <fieldset class="repeating_mindFieldSet">
+            <td><input type="text" name="attr_mindSkillName" style= "width: 30%;">
+            <input type="number" name= "attr_mindSkill0">
+        <button type='roll' value= '/roll (@{mindSkill0}+@{mind})d10>@{targetNum}'></button></td>
+    </fieldset>
+</div>
+</div>
+<!-- --------------------------------------------------------------------------------------- -->
+
+
+
+            <!-- ======================================================================================================== -->
+
+
+<div class="sheet-listofSkills">
+
+
+<div class="sheet-listofcombatSkills">
+            <h4>Combat</h4>   
+<fieldset class="repeating_CombatSkills">  
+         
+         Name:<input type="text" name="attr_skillname" style="width: 150px;" />
+       
+          Description: <textarea rows="2" name="attr_combatDescription" style="height: 50%;" ></textarea >
+         
+      <input type="number" name="attr_currentDamageDiceCombatSkills" value="1"/>  
+      <select name="attr_currentDamageDieTypeCombatSkills" class="dtype" style="width: 50px;" value="12">                
+          <option value="4">d4</option>
+          <option value="6">d6</option>
+          <option value="8">d8</option>
+          <option value="10">d10</option>
+          <option value="12">d12</option>
+      </select>
+     
+        <input type="number" name="attr_currentDamageModifierCombatSkills" value="0" />
+     <button type= 'roll' value='/roll @{currentDamageDiceCombatSkills}d@{currentDamageDieTypeCombatSkills} + @{currentDamageModifierCombatSkills} for damage'> Damage</button>
+         PiP Cost: <input type="number" name="attr_pipCost" />
+</fieldset>
+</div>
+ 
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="sheet-skillDescriptionList">
+
+<div class="sheet-list-of-ExplorationSkills">
+            <h4>Exploration</h4>
+<fieldset class="repeating_ExplorationSkills">            
+    Name:  <input type="text" name="attr_skillname" />
+    Description: <textarea rows="2" name="attr_explorationDescription" style="height: 50%"></textarea>    
+</fieldset>
+</div>
+<!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+<div class="sheet-listofInteractionSkills">
+        <h4>Interaction</h4>
+<fieldset class="repeating_InteractionSkills">
+    Name:  <input type="text" name="attr_skillname" />
+    Description: <textarea rows="2" name="attr_interactionDescription" style="height: 50%"></textarea>    
+</fieldset>
+</div>
+        
+  
+<!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
+</div>
+
+
+
+
+
+
+
+
+<!-- end-  -->
+</div>
+</div>
